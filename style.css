@@ -1,0 +1,183 @@
+/* ================== إعدادات عامة والطبقة الشفافة ================== */
+
+body {
+    margin: 0;
+    font-family: 'Cairo', Arial, sans-serif;
+    background: url("images/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    direction: rtl;
+    padding-top: 100px;
+    /* لضمان الترتيب العربي */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #000;
+}
+
+.overlay {
+    background: rgba(126, 69, 47, 0.85);
+    /* اللون البني من كودك الأول */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+/* ================== حاوية الاستعارة الرئيسية ================== */
+
+.borrow-container {
+    background: rgba(0, 0, 0, 0.7);
+    /* الخلفية الداكنة */
+    width: 90%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(241, 196, 15, 0.3);
+    /* الإطار الذهبي */
+    box-shadow: 0 10px 30px rgba(71, 64, 64, 0.5);
+}
+
+.header-title {
+    color: #f5c16c;
+    /* اللون الذهبي */
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgba(245, 193, 108, 0.3);
+    padding-bottom: 15px;
+}
+
+.main-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+
+/* ================== قسم الفورم (اليسار) ================== */
+
+.borrow-form {
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.row input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #f1c40f;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    /* 🔥 هذا يحل مشكل الكتابة السوداء */
+    font-size: 16px;
+}
+
+label {
+    color: #f1c40f;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+p,
+label {
+    color: #f1c40f;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input::placeholder textarea::placeholder {
+    color: #f1c40f !important;
+    opacity: 1 !important;
+}
+
+.row input::placeholder {
+    color: #ccc;
+    /* لون placeholder */
+}
+
+
+}
+.confirm-btn {
+    background: #5a3214;
+    /* اللون البني الغامق */
+    
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+.confirm-btn:hover {
+    background: #8b5e3c;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(228, 187, 6, 0.3);
+}
+
+/* ================== قسم الكتاب (اليمين) ================== */
+.book-details-card {
+    flex: 1;
+    background: rgba(230, 189, 10, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(245, 193, 108, 0.2);
+}
+.book-image-box img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(214, 178, 79, 0.2);
+}
+.book-text-info h3 {
+    color: #f5c16c;
+    margin: 0 0 10px 0;
+}
+.book-text-info p {
+    color: #ddd;
+    margin: 5px 0;
+}
+.book-text-info p span {
+    color: #f5c16c;
+    font-weight: bold;
+}
+.status {
+    color: lightgreen;
+    font-weight: bold;
+}
+
+/* ================== التجاوب مع الموبايل ================== */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column-reverse;
+        /* الكتاب يظهر فوق الفورم في الموبايل */
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .borrow-container {
+        padding: 20px;
+    }
+}
