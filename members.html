@@ -1,0 +1,19 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container mt-5" style="direction: rtl; color: white;">
+    <h2 class="text-center mb-5" style="color: #f1c40f; font-size: 45px;">سجل الأعضاء والمستعيرين</h2>
+    <div class="row" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        {% for member in members %}
+        <div style="width: 450px; background: rgba(0,0,0,0.85); border: 2px solid #f1c40f; border-radius: 20px; padding: 25px; margin-bottom: 20px;">
+            <h4 style="color: #f1c40f; border-bottom: 1px dashed #f1c40f; padding-bottom: 10px;">{{ member.fname }} {{ member.lname }}</h4>
+            <p><strong>الإيميل:</strong> {{ member.email }}</p>
+            <p><strong>الهاتف:</strong> {{ member.phone }}</p>
+            <p><strong>الكتاب المستعار:</strong> <span style="color: #f1c40f;">{{ member.borrowed_book_title }}</span></p>
+
+            <a href="{{ url_for('return_book_logic', member_id=member.id) }}" style="display: block; background: #e74c3c; color: white; text-align: center; padding: 10px; border-radius: 10px; text-decoration: none; margin-top: 15px; font-weight: bold;">
+               إعادة الكتاب
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

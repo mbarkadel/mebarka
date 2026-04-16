@@ -1,0 +1,33 @@
+{% extends "layout.html" %} {% block content %}
+<div class="borrow-form">
+    <div class="header-title">ادخال معلومات الاستعارة</div>
+
+    <div class="main-content">
+        <div class="borrow-form">
+            <div class="form-row">
+                <input type="text" placeholder="الاسم">
+                <input type="text" placeholder="اللقب">
+
+                <input type="email" placeholder="البريد الإلكتروني">
+                <input type="text" placeholder="التخصص">
+                <input type="tel" placeholder="رقم الهاتف">
+                <input type="date" placeholder="اليوم">
+            </div>
+
+            <button class="confirm-btn">زر التأكيد</button>
+        </div>
+
+        <div class="book-details">
+            <div class="book-image">
+                <span>[صورة الكتاب]</span>
+            </div>
+            <div class="book-info">
+                <h3>عنوان الكتاب</h3>
+                <p>المؤلف: اسم المؤلف</p>
+                <p>الحالة: <span class="status">متاح</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

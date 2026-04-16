@@ -1,0 +1,20 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container mt-5 p-4 rounded" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px); color: white;">
+    <h2 class="text-center mb-4">تفاصيل المستعير لكتاب: {{ book.title }}</h2>
+
+    {% if member %}
+    <ul class="list-group list-group-flush text-right" dir="rtl">
+        <li class="list-group-item bg-transparent text-white"><strong>الاسم:</strong> {{ member.fname }} {{ member.lname }}</li>
+        <li class="list-group-item bg-transparent text-white"><strong>الايميل:</strong> {{ member.email }}</li>
+        <li class="list-group-item bg-transparent text-white"><strong>الهاتف:</strong> {{ member.phone }}</li>
+        <li class="list-group-item bg-transparent text-white"><strong>السنة:</strong> {{ member.year }}</li>
+    </ul>
+    {% else %}
+    <p class="text-center">✅ هذا الكتاب متاح حالياً في المكتبة.</p>
+    {% endif %}
+
+    <div class="text-center mt-4">
+        <a href="{{ url_for('index') }}" class="btn btn-outline-light">العودة للرئيسية</a>
+    </div>
+</div>
+{% endblock %}
